@@ -24,8 +24,8 @@ def format_user(result):
     return user
 
 
-@app.route('/user', methods=['GET'])
-@app.route('/user/<username>', methods=['GET'])
+@app.route('/users', methods=['GET'])
+@app.route('/users/<username>', methods=['GET'])
 def get_users(username=None):
     if username is None:
         # Quando o usuário não é informado, retorna todos os usuários...
@@ -51,7 +51,7 @@ def get_users(username=None):
     return jsonify(response)
 
 
-@app.route('/user', methods=['POST'])
+@app.route('/users', methods=['POST'])
 def create_user():
     user = request.get_json()
 
@@ -68,7 +68,7 @@ def create_user():
     return make_response(jsonify('OK'), 201)
 
 
-@app.route('/user/<username>', methods=['PUT'])
+@app.route('/users/<username>', methods=['PUT'])
 def update_user(username=None):
     user = request.get_json()
 
@@ -85,7 +85,7 @@ def update_user(username=None):
     return make_response(jsonify('OK'), 204)
 
 
-@app.route('/user/<username>', methods=['DELETE'])
+@app.route('/users/<username>', methods=['DELETE'])
 def delete_user(username=None):
     if username is None:
         abort(404)

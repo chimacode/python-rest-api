@@ -7,4 +7,4 @@ create table user (
 );
 
 insert into user (username, name, email)
-    values ('rogowski', 'Marcos', 'mvrogowski@gmail.com');
+values ('rogowski', 'Marcos', 'mvrogowski@gmail.com');
