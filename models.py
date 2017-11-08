@@ -5,11 +5,11 @@ import sqlite3 as sql
 logger = logging.getLogger(__name__)
 
 
-DATABASE = 'user.db'
+DATABASE = 'users.db'
 
 
 def select_all():
-    query = "SELECT * FROM user"
+    query = "SELECT * FROM users"
 
     conn = sql.connect(DATABASE)
     cursor = conn.cursor()
@@ -24,7 +24,7 @@ def select_all():
 
 
 def select_by_username(username):
-    query = "SELECT * FROM user WHERE username=?"
+    query = "SELECT * FROM users WHERE username=?"
 
     conn = sql.connect(DATABASE)
     cursor = conn.cursor()
@@ -39,7 +39,7 @@ def select_by_username(username):
 
 
 def insert_user(username, name, email):
-    query = "INSERT INTO user (username, name, email) VALUES (?, ?, ?)"
+    query = "INSERT INTO users (username, name, email) VALUES (?, ?, ?)"
 
     conn = sql.connect(DATABASE)
 
@@ -62,7 +62,7 @@ def insert_user(username, name, email):
 
 def update_user(username, name, email):
     query = """
-        UPDATE user
+        UPDATE users
         SET username = ?, name = ?, email = ?
         WHERE username = ?
         """
@@ -88,7 +88,7 @@ def update_user(username, name, email):
 
 def delete_user(username):
     query = """
-        DELETE FROM user
+        DELETE FROM users
         WHERE username = ?
         """
 
