@@ -5,7 +5,7 @@
 
 Para instalar nossas dependências, utilizamos o gerenciador de pacotes [pip](https://pip.pypa.io/en/stable).
 
-Nossa API REST foir construída utilizando o web framework [Flask](http://flask.pocoo.org).
+Nossa API REST foi construída utilizando [Flask](http://flask.pocoo.org).
 
 ```bash
 pip install flask
@@ -15,4 +15,11 @@ Para efetuar as requisições para nossa API, utilizamos uma ferramenta chamada 
 
 ```bash
 pip install httpie
+```
+
+## Rodando a API
+Para executar a aplicação, basta navegar até a pasta onde está localizado nosso arquivo ```app.py``` e executar:
+
+```bash
+python app.py
 ```
